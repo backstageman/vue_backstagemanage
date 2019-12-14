@@ -4,6 +4,7 @@ body,
     height: 100%;
     margin: 0;
     padding: 0;
+    min-width: 1366px;
 }
 .users-container .breadcrumbArea{
     margin-bottom: 15px;
@@ -21,4 +22,7 @@ body,
     display: flex;
     flex-direction: row-reverse;
     margin-top: 15px;
+}
+.el-breadcrumb{
+    margin-bottom: 15px;
 }
