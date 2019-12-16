@@ -26,3 +26,6 @@ body,
 .el-breadcrumb{
     margin-bottom: 15px;
 }
+.el-cascader-menu__wrap {
+    max-height: 400px;
+}
