@@ -39,9 +39,9 @@
           <el-tag v-else type="warning">三级</el-tag>
         </template>
         <!-- 操作 -->
-        <template slot="opt">
-          <el-button type="primary" icon="el-icon-edit" size="mini">编辑</el-button>
-          <el-button type="danger" icon="el-icon-delete" size="mini">删除</el-button>
+        <template slot="opt" slot-scope="scope">
+          <el-button type="primary" icon="el-icon-edit" size="mini" @click="editCate(scope.row)">编辑</el-button>
+          <el-button type="danger" icon="el-icon-delete" size="mini" @click="deleteCate">删除</el-button>
         </template>
       </tree-table>
       <!-- 分页导航 -->
@@ -257,6 +257,14 @@ export default {
       this.addCateForm.cat_pid = 0
       this.addCateForm.cat_level = 0
       this.selectKeys = []
+    },
+    // 编辑分类
+    editCate(row) {
+      console.log(row)
+    },
+    // 删除分类
+    deleteCate() {
+      console.log('删除分类')
     }
   }
 }

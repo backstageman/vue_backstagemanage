@@ -31,8 +31,8 @@
           <template slot-scope="scope">{{scope.row.create_time | dateFormat}}</template>
         </el-table-column>
         <el-table-column label="操作">
-          <template>
-            <el-button type="primary" icon="el-icon-edit" size="mini" @click="updateAddress"></el-button>
+          <template slot-scope="scope">
+            <el-button type="primary" icon="el-icon-edit" size="mini" @click="updateAddress(scope.row)"></el-button>
             <el-button type="success" icon="el-icon-location" size="mini" @click="showProgress"></el-button>
           </template>
         </el-table-column>
@@ -173,5 +173,8 @@ export default {
 <style lang="less" scoped>
 .el-cascader {
   width: 100%;
+}
+.el-input {
+  margin-bottom: 15px;
 }
 </style>

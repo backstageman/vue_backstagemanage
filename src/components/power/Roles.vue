@@ -65,8 +65,18 @@
         <el-table-column prop="roleDesc" label="角色描述" width="180"></el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
-            <el-button type="primary" icon="el-icon-edit" size="mini">编辑</el-button>
-            <el-button type="danger" icon="el-icon-delete" size="mini">删除</el-button>
+            <el-button
+              type="primary"
+              icon="el-icon-edit"
+              size="mini"
+              @click="editRoles(scope.row)"
+            >编辑</el-button>
+            <el-button
+              type="danger"
+              icon="el-icon-delete"
+              size="mini"
+              @click="deleteRoles(scope.row)"
+            >删除</el-button>
             <el-button
               type="warning"
               icon="el-icon-setting"
@@ -133,7 +143,7 @@ export default {
         this.$message.error('获取角色列表失败')
       }
       this.rolelist = res.data
-      // console.log(res)
+      console.log(this.rolelist)
     },
     // 根据id删除对应的权限
     async removeRighsById(role, id) {
@@ -214,6 +224,12 @@ export default {
       this.getRolesList()
       // 关闭对话框
       this.setRightDialogVisible = false
+    },
+    editRoles(role) {
+      console.log(role)
+    },
+    deleteRoles(role) {
+      console.log(role)
     }
   }
 }
@@ -232,5 +248,8 @@ export default {
 .vercenter {
   display: flex;
   align-items: center;
+}
+.el-button {
+  margin-bottom: 15px;
 }
 </style>
